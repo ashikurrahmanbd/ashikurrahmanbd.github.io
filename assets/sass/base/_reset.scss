@@ -45,4 +45,7 @@ body{
 
 html{
     overflow-x:  hidden;
+    @include mixins.responsive(small){
+        overflow-x: hidden;
+    }
 }

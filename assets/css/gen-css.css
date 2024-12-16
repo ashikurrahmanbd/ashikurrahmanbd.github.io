@@ -33,6 +33,10 @@ body .site-container {
   padding: 0 20px;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-size: 16px;

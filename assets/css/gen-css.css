@@ -485,4 +485,16 @@ header .header-widgets .menu ul li a:hover {
   margin-top: 22px;
 }
 
+/***************** Start Footer Section ***********************/
+.footer {
+  background-color: #b9bbd7;
+  padding: 25px 0;
+}
+.footer p {
+  font-weight: bold;
+  text-align: center;
+}
+
+/**************** End of Footer Section **********************/
+
 /*# sourceMappingURL=gen-css.css.map */

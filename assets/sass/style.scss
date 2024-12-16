@@ -511,18 +511,18 @@ header{
 
         margin-top: 20px;
         display: flex;
+        gap: 25px;
         @include mixins.responsive(small){
             flex-direction: column;
         }
-        gap: 25px;
 
         .single-project{
 
             width: 50%;
+            background-color: vars.$section-gradient2;
             @include mixins.responsive(small){
                 width: 100%;
             }
-            background-color: vars.$section-gradient2;
             
             .project-thumb{
 
@@ -573,4 +573,21 @@ header{
     }
 
 }
+//End of technology I used
+
+/***************** Start Footer Section ***********************/
+
+
+.footer{
+    background-color: #b9bbd7;
+    padding: 25px 0;
+
+    p{
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+
+/**************** End of Footer Section **********************/
 

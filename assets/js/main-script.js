@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     //smooth scroll
      // Smooth scroll to anchor
-    $('a[href^="#"]').on('click', function(e) {
+    $('.menu ul li a[href^="#"]').on('click', function(e) {
         e.preventDefault(); // Prevent default anchor behavior
 
         var target = this.hash;

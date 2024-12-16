@@ -15,6 +15,15 @@ $(document).ready(function () {
         const target = $(this).data("target");
         $(target).addClass("active");
     });
+
+
+    //function to show the mobile menu
+    $('.toggle-icon svg').on('click', function(){
+
+        $('.mobile-menu-conatainer').toggleClass('mobile-active');
+
+    });
+
 });
 
 

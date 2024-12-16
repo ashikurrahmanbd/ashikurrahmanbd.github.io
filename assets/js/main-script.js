@@ -24,6 +24,20 @@ $(document).ready(function () {
 
     });
 
+    //smooth scroll
+     // Smooth scroll to anchor
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        var target = this.hash;
+        var $target = $(target);
+
+        // Animate scroll
+        $('html, body').animate({
+        scrollTop: $target.offset().top
+        }, 1000); // Duration: 1000ms (1 second)
+    });
+
 });
 
 

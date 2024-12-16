@@ -1,0 +1,50 @@
+
+
+@use '_variable.scss' as vars;
+
+@use '_mixins.scss';
+
+
+body{
+
+    font-family: vars.$font-family-base;
+    font-size: vars.$font-size-xl;
+
+    @include mixins.responsive(medium){
+        font-size: vars.$font-size-md;
+    }
+    
+    h1{
+
+        font-size: vars.$h1-font-size-xl;
+
+        @include mixins.responsive(medium){
+            font-size: vars.$h1-font-size-md;
+        }
+
+        @include mixins.responsive(small){
+            font-size: vars.$h1-font-size-sm;
+        }
+
+
+    }
+
+    h2{
+        font-size: vars.$h2-font-size-xl;
+
+        @include mixins.responsive(medium){
+            font-size: vars.$h2-font-size-md;
+        }
+
+        @include mixins.responsive(small){
+            font-size: vars.$h2-font-size-sm;
+        }
+
+    }
+
+
+
+    
+    
+
+}

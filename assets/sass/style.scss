@@ -1,0 +1,576 @@
+// use all partials
+
+//base
+@use 'base/reset';
+@use 'base/variable' as vars;
+@use 'base/typography';
+@use 'base/functions';
+@use 'base/mixins';
+
+
+//components
+@use 'components/button';
+@use 'components/card';
+
+
+//Layout
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/footer';
+
+
+/**
+* Header CSS
+*/
+header{
+
+    // background: linear-gradient(vars.$section-gradient2, vars.$section-gradient2);
+
+    //graditend start
+
+    background: hsla(238, 59%, 89%, 1);
+
+    background: linear-gradient(180deg, hsla(238, 59%, 89%, 1) 0%, hsla(240, 71%, 97%, 1) 100%);
+
+    background: -moz-linear-gradient(180deg, hsla(238, 59%, 89%, 1) 0%, hsla(240, 71%, 97%, 1) 100%);
+
+    background: -webkit-linear-gradient(180deg, hsla(238, 59%, 89%, 1) 0%, hsla(240, 71%, 97%, 1) 100%);
+
+   
+
+    //gradient end
+   
+    padding: 20px 0;
+    box-shadow: 1px 1px 3px vars.$section-gradient2;
+    
+
+    .header-widgets{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo{
+            max-width: 100px;
+            max-height: 75px;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .menu{
+
+            ul{
+                li{
+                    display: inline-block;
+                    margin: 0 8px;
+                    
+
+                    a{
+                        display: block;
+                        padding: 5px 15px;
+                        color: vars.$text-color;
+                        transition: .3s linear ease-in-out;
+                        &:hover{
+                            color: vars.$primary-color;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+    }
+
+}
+// end of header css
+
+// Start Hero Section
+.hero{
+    padding: 35px 0;
+    background: url('../images/hero/solid-hero-bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .left-bottom-element{
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        
+        img{
+
+            width: 280px;
+            height: 55px;
+            
+
+            @include mixins.responsive(medium){
+                width: 250px;
+                height: 50px;
+            }
+
+            @include mixins.responsive(small){
+                
+                display: none;
+                
+            }
+        }
+    }
+
+    .right-center-element{
+        
+        img{
+            height: 300px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        };
+    }
+
+    .hero-widgets{
+
+        display: flex;
+        align-items: center;
+
+        //for mobile screen
+        @include mixins.responsive(small){
+
+            flex-direction: column-reverse;
+
+        }
+
+        .hero-content{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 70%;
+
+            //tab
+            @include mixins.responsive(medium){
+
+                width: 60%;
+
+            }
+
+            //resposive for smalll device
+            @include mixins.responsive(small){
+                width: 100%;
+            }
+
+           
+
+            h1{
+                span{
+                    color: vars.$primary-color;
+                }
+            }
+            h5{
+                font-size: 22px;
+                @include mixins.responsive(medium){
+                    font-size: 16px;
+                }
+            }
+            p{
+                margin-top: 20px;
+            }
+            .cta{
+                margin-top: 26px;
+            }
+        }
+        .hero-profile{
+
+            width: 30%;
+            
+            @include mixins.responsive(medium){
+
+                width: 40%;
+
+            }
+            
+            @include mixins.responsive(small){
+
+                width: 80%;
+                margin-bottom: 40px;
+
+            }
+
+
+            .person-image{
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                position: relative;
+
+                img{
+                    width: 100%;
+                }
+                .action-links{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    position: absolute;
+                    left: 22px;
+                    a{
+                        display: inline-block;
+                    }
+                    @include mixins.responsive(medium){
+                        left: 20px;
+                    }
+
+                    @include mixins.responsive(small){
+                        left: 28px;
+                    }
+
+                    img{
+                        border: 1px solid #fff;
+                        background: #fff;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 4px;
+                        cursor: pointer;
+
+                        @include mixins.responsive(medium){
+
+                            width: 28px;
+                            height: 28px;
+
+                        }
+                    }
+                }
+            }
+            .profile-action{
+                text-align: center;
+
+                h3{
+                    font-family: vars.$font-family-stylist;
+                    letter-spacing: 2px;
+                    font-weight: normal;
+                    font-size: 28px;
+                }
+                p{
+                    font-size: 14px;
+                    
+                }
+            }
+        }
+
+    }
+
+}
+// End of Hero Section
+
+// started About-me Sectino
+.about-me{
+
+    padding: 75px 0;
+
+    .about-me-widgets{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+
+        @include mixins.responsive(medium){
+
+            flex-direction: column-reverse;
+
+        }
+
+        .about-content{
+
+            width: 70%;
+
+            @include mixins.responsive(medium){
+                width: 100%;
+            }
+
+            p.section-top-sub{
+                color: vars.$text-color;
+            }
+            p.section-sub-title{
+                color: vars.$text-color;
+                font-weight: bold;
+
+            }
+            h2.section-title{
+                color: vars.$primary-color;
+            }
+            .my-bio{
+
+                margin-top: 30px;
+
+                @include mixins.responsive(medium){
+
+                    text-align: justify;
+
+                }
+
+               
+
+                p{
+                    
+                    margin: 10px 0;
+
+                    span{
+                        color: vars.$primary-color;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .about-image{
+            
+            width: 25%;
+
+            @include mixins.responsive(medium){
+
+                width: 50%;
+
+            }
+
+            img{
+                width: 100%;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                transform: rotate(6deg);
+            }
+        }
+    }
+
+}
+// end of About section
+
+// Start Technology I use Section
+.technology-i-used{
+
+    background-color: vars.$section-gradient2;
+    padding: 35px 0;
+
+    .technology-i-used-widgets{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mixins.responsive(medium){
+
+            flex-direction: column;
+
+        }
+
+    
+        
+        h3{
+
+            font-size: vars.$h3-font-size-lg;
+
+            color: vars.$primary-color;
+
+            @include mixins.responsive(medium){
+
+                margin-bottom: 32px;
+
+            }
+        }
+
+        
+
+
+    }
+
+    .tech-logos{
+
+        display: inline-block;
+        
+        img{
+            width: 70px;
+            height: 70px;
+            margin: 0 8px;
+
+            @include mixins.responsive(medium){
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+
+}
+// end of Technology i used
+
+//start Product /project i developed
+.product-i-developed{
+
+    padding: 75px 0;
+
+    .product-i-developed-widgets{
+
+        h2{
+            text-align: center;
+            color: vars.$text-color
+        }
+
+        .products-catalog{
+
+            
+
+            ul.catalog-category{
+
+                text-align: center;
+                margin-top: 25px;
+
+                li{
+                    display: inline-block;
+                    margin: 4px 5px;
+
+
+
+                    a{
+                        display: block;
+                        padding: 8px 15px;
+                        border: 1px solid vars.$text-color;
+                        border-radius: 24px;
+                        color: vars.$text-color;
+                        font-size: vars.$font-size-md;
+                        
+                        &:hover{
+                            background-color: vars.$primary-color;
+                            color: #fff;
+                            border: 1px solid vars.$primary-color;
+                        }
+                    }
+                }
+
+            }
+
+            //css for the tabs
+
+
+            .catalog-result {
+                margin-top: 50px;
+
+                > div {
+
+                    display: none; // Hide all content divs by default
+                    
+                    &.active {
+                        display: block; // Show the active content div
+                    }
+                }
+            }
+            
+            .catalog-category {
+
+                li {
+
+                    display: inline-block;
+                    margin: 0 10px;
+                    cursor: pointer;
+            
+                    a {
+                        text-decoration: none;
+                        color: #333;
+                    }
+            
+                    &.active {
+
+                        a {
+                            font-weight: bold;
+                            background-color: vars.$primary-color;
+                            color: vars.$color-white;
+                        }
+
+                    }
+                }
+            }
+
+            // css for the tabs end
+
+            
+            
+
+        }
+
+    }
+
+}
+
+/*
+* Project Catalog Start
+*/
+.catalog-result{
+
+    .projects-row{
+
+        margin-top: 20px;
+        display: flex;
+        @include mixins.responsive(small){
+            flex-direction: column;
+        }
+        gap: 25px;
+
+        .single-project{
+
+            width: 50%;
+            @include mixins.responsive(small){
+                width: 100%;
+            }
+            background-color: vars.$section-gradient2;
+            
+            .project-thumb{
+
+                width: 100%;
+                height: 320px;
+
+                img{
+                    
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+
+            .project-info{
+
+                padding: 15px;
+
+                h3{
+                    margin-bottom: 8px;
+                }
+
+                .project-meta-n-action{
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .project-meta{
+
+                        margin-top: 18px;
+    
+                    }
+                    .project-action{
+    
+                        a.btn{
+                            margin-top: 22px;
+                        }
+    
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}
+

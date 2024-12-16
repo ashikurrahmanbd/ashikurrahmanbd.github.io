@@ -1,4 +1,5 @@
 @use '_variable.scss' as vars;
+@use '_mixins';
 
 *{
     margin:0;
@@ -12,6 +13,9 @@ body{
     padding: 0;
     font-weight: normal;
     overflow-x: hidden;
+    @include mixins.responsive(small){
+        overflow-x: hidden;
+    }
     a{
         text-decoration: none;
     }
@@ -35,10 +39,7 @@ body{
         width: 100%;
         max-width: 1140px;
         margin: 0 auto;
-        padding: 0 20px;
-
-        
-      
+        padding: 0 20px;      
     }
 }
 

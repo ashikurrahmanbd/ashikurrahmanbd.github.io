@@ -12,6 +12,11 @@ body {
   font-weight: normal;
   overflow-x: hidden;
 }
+@media (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 body a {
   text-decoration: none;
 }
